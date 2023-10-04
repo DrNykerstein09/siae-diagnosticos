@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+
+}
+
+model diagnosticos {
+  catalog_key String  @id @db.VarChar(10)
+  nombre      String? @db.VarChar(255)
+}
